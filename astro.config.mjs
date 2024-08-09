@@ -22,8 +22,8 @@ export default defineConfig({
       noExternal: ['swiper', 'leaflet']
     }
   },
-  site: 'https://johnnyvaz.com.br',
-  base: '/hello-astro/',
+  site: 'https://site-johnnyvaz.netlify.app/',
+  base: '/',
   integrations: [icon(), tailwind(), sitemap(), mdx(), alpinejs(), robotsTxt(), markdoc()],
   markdown: {
     extendDefaultPlugins: true,
