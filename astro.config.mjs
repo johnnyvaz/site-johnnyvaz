@@ -22,7 +22,7 @@ export default defineConfig({
       noExternal: ['swiper', 'leaflet']
     }
   },
-  site: 'https://hellotham.github.io',
+  site: 'https://johnnyvaz.com.br',
   base: '/hello-astro/',
   integrations: [icon(), tailwind(), sitemap(), mdx(), alpinejs(), robotsTxt(), markdoc()],
   markdown: {

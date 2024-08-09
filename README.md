@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/44340011-a3b1-41ad-ab6d-fb94861ea4fa/deploy-status)](https://app.netlify.com/sites/site-johnnyvaz/deploys)
+
 # hello-astro
 
 Hello Astro is a full featured [Astro](https://astro.build) multi-purpose starter theme written in Typescript and TailwindCSS. It supports Markdown and MDX based pages and blog posts.
