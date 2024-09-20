@@ -1,5 +1,5 @@
 ---
-// Logo.astro
+const { size = '2rem' } = Astro.props; // Define uma prop de tamanho com valor padrão
 ---
 <style>
     .logo {
@@ -10,7 +10,6 @@
       justify-content: center;
     }
     .logo h1 {
-      font-size: 2rem;
       font-family: 'Arial', sans-serif;
       color: #fff;
       display: flex;
@@ -66,7 +65,7 @@
         }
         35%, 65% {
             opacity: 1;
-            transform: translateX(-50px); /* Move "J" para a direita */
+            transform: translateX(-50px);
         }
         75%, 100% {
             opacity: 1;
@@ -84,19 +83,6 @@
         background-position: 0% 50%;
       }
     }
-    .lines {
-      position: absolute;
-      top: -50vh;
-      left: -50vw;
-      width: 200vw;
-      height: 200vh;
-      background: radial-gradient(circle at center, transparent 0%, transparent 70%, rgba(255,255,255,0.05) 70%, rgba(255,255,255,0.05) 100%),
-                  linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px),
-                  linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px);
-      background-size: 100px 100px;
-      animation: moveLines 20s linear infinite;
-      pointer-events: none;
-    }
     @keyframes moveLines {
       0% {
         transform: translateX(0) translateY(0);
@@ -105,21 +91,21 @@
         transform: translateX(-100px) translateY(-100px);
       }
     }
-  </style>
-  
-  <div class="logo">
-    <h1>
-      <span class="j">J</span>
-      <span>o</span>
-      <span>h</span>
-      <span>n</span>
-      <span>n</span>
-      <span>y</span>
-      <span>&nbsp;</span>
-      <span class="v">V</span>
-      <span>a</span>
-      <span>z</span>
-    </h1>
-    <div class="lines"></div>
-  </div>
-  
+</style>
+
+<div class="logo">
+  <!-- Aplica o tamanho dinâmico definido pela prop "size" -->
+  <h1 style={`font-size: ${size};`}>
+    <span class="j">J</span>
+    <span>o</span>
+    <span>h</span>
+    <span>n</span>
+    <span>n</span>
+    <span>y</span>
+    <span>&nbsp;</span>
+    <span class="v">V</span>
+    <span>a</span>
+    <span>z</span>
+  </h1>
+  <div class="lines"></div>
+</div>
