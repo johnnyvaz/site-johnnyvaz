@@ -1,0 +1,125 @@
+---
+// Logo.astro
+---
+<style>
+    .logo {
+      position: relative;
+      perspective: 1000px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .logo h1 {
+      font-size: 2rem;
+      font-family: 'Arial', sans-serif;
+      color: #fff;
+      display: flex;
+      position: relative;
+      margin: 0;
+    }
+    .logo h1 span {
+      display: inline-block;
+      background: linear-gradient(45deg, #4B0082, #8A2BE2, #C8A2C8, #808080, #000000);
+      background-size: 400% 400%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: fadeLetters 10s infinite, gradientShift 15s infinite;
+    }
+    .logo h1 span.j {
+      animation: moveLetterJ 10s infinite, gradientShift 15s infinite;
+    }
+    .logo h1 span.v {
+      animation: moveLetterV 10s infinite, gradientShift 15s infinite;
+    }
+    .logo h1 span:not(.j):not(.v) {
+      animation: fadeLetters 10s infinite, gradientShift 15s infinite;
+    }
+    @keyframes fadeLetters {
+      0%, 25% {
+        opacity: 1;
+      }
+      35%, 65% {
+        opacity: 0;
+      }
+      75%, 100% {
+        opacity: 1;
+      }
+    }
+    @keyframes moveLetterJ {
+      0%, 25% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+      35%, 65% {
+        opacity: 1;
+        transform: translateX(50px);
+      }
+      75%, 100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    @keyframes moveLetterV {
+        0%, 25% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        35%, 65% {
+            opacity: 1;
+            transform: translateX(-50px); /* Move "J" para a direita */
+        }
+        75%, 100% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+    @keyframes gradientShift {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+    .lines {
+      position: absolute;
+      top: -50vh;
+      left: -50vw;
+      width: 200vw;
+      height: 200vh;
+      background: radial-gradient(circle at center, transparent 0%, transparent 70%, rgba(255,255,255,0.05) 70%, rgba(255,255,255,0.05) 100%),
+                  linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px),
+                  linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px);
+      background-size: 100px 100px;
+      animation: moveLines 20s linear infinite;
+      pointer-events: none;
+    }
+    @keyframes moveLines {
+      0% {
+        transform: translateX(0) translateY(0);
+      }
+      100% {
+        transform: translateX(-100px) translateY(-100px);
+      }
+    }
+  </style>
+  
+  <div class="logo">
+    <h1>
+      <span class="j">J</span>
+      <span>o</span>
+      <span>h</span>
+      <span>n</span>
+      <span>n</span>
+      <span>y</span>
+      <span>&nbsp;</span>
+      <span class="v">V</span>
+      <span>a</span>
+      <span>z</span>
+    </h1>
+    <div class="lines"></div>
+  </div>
+  

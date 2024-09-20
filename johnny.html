@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Logo Johnny Vaz</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: transparent; /* Fundo removido */
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .logo {
+        position: relative;
+        perspective: 1000px;
+    }
+    .logo h1 {
+        font-size: 100px;
+        font-family: 'Arial', sans-serif;
+        color: #fff;
+        display: flex;
+    }
+    .logo h1 span {
+        display: inline-block;
+        /* animation: fadeLetters 10s infinite; */
+        background: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet); /* Cores do arco-íris */
+        background-size: 400% 400%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation-name: fadeLetters, gradientShift;
+        animation-duration: 10s, 15s;
+        animation-fill-mode: forwards;
+        animation-iteration-count: infinite, infinite;
+        animation-timing-function: ease-in-out, linear;
+    }
+    /* Animação ajustada para o "J" */
+    .logo h1 span.j {
+        animation: moveLetterJ 10s infinite, gradientShift 15s infinite;
+        animation-fill-mode: forwards;
+    }
+    /* Animação para o "V" permanece a mesma */
+    .logo h1 span.v {
+        animation: moveLetterV 10s infinite, gradientShift 15s infinite;
+        animation-fill-mode: forwards;
+    }
+    @keyframes fadeLetters {
+        0%, 25% {
+            opacity: 1;
+        }
+        35%, 85% {
+            opacity: 0;
+        }
+        95%, 100% {
+            opacity: 1;
+        }
+    }
+    /* Keyframes para o "J" movendo-se para a direita */
+    @keyframes moveLetterJ {
+        0%, 25% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        35%, 65% {
+            opacity: 1;
+            transform: translateX(180px); /* Move "J" para a direita */
+        }
+        75%, 100% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+    /* Keyframes para o "V" permanecendo no lugar */
+    @keyframes moveLetterV {
+        0%, 25% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        35%, 65% {
+            opacity: 1;
+            transform: translateX(-150px); /* Move "J" para a direita */
+        }
+        75%, 100% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+    @keyframes gradientShift {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+    .lines {
+        position: absolute;
+        top: -50vh;
+        left: -50vw;
+        width: 200vw;
+        height: 200vh;
+        background: radial-gradient(circle at center, transparent 0%, transparent 70%, rgba(255,255,255,0.05) 70%, rgba(255,255,255,0.05) 100%),
+                    linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px),
+                    linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px);
+        background-size: 100px 100px;
+        animation: moveLines 20s linear infinite;
+    }
+    @keyframes moveLines {
+        0% {
+            transform: translateX(0) translateY(0);
+        }
+        100% {
+            transform: translateX(-100px) translateY(-100px);
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="logo">
+        <h1>
+            <span class="j">J</span>
+            <span>o</span>
+            <span>h</span>
+            <span>n</span>
+            <span>n</span>
+            <span>y</span>
+            <span>&nbsp;</span>
+            <span class="v">V</span>
+            <span>a</span>
+            <span>z</span>
+        </h1>
+        <div class="lines"></div>
+    </div>
+</body>
+</html>
