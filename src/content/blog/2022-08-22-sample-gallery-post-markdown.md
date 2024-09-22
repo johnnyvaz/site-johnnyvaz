@@ -1,7 +1,8 @@
 ---
+draft: true
 title: Sample Gallery post (Markdown!)
 description: Test post with a photo gallery and lightbox (using PhotoSwipe)
-author: chris-tham
+author: johnny
 pubDate: 2022-08-22T00:00:00.000Z
 coverImage: ../../assets/gallery/apollo11/Ferry.jpeg
 gallery: apollo11

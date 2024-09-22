@@ -1,7 +1,8 @@
 ---
+draft: true
 title: Math Equations
 description: Display math equations in blog posts!
-author: chris-tham
+author: johnny
 pubDate: 2022-08-24T00:00:00.000Z
 coverSVG: ../../assets/svg/undraw/undraw_mathematics.svg
 socialImage: ../../assets/undraw/undraw_mathematics.png

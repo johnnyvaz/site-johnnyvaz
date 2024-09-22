@@ -12,7 +12,7 @@ export interface Props {
 
 const { post } = Astro.props
 
-let cat = await getEntry('category', 'general')
+let cat = await getEntry('category', 'negócio')
 if (post.data.categories) {
   cat = await getEntry(post.data.categories[0])
 }

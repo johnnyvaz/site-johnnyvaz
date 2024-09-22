@@ -16,7 +16,29 @@ const blog = defineCollection({
       categories: z.array(reference('category')).optional(),
       tags: z.array(z.string()).optional(),
       extra: z.array(z.enum(['math', 'markmap', 'mermaid', 'gallery'])).optional(),
-      minutesRead: z.string().optional()
+      minutesRead: z.string().optional(),
+
+      // Adicionando elementos de Landing Page e Funil de Vendas
+      headline: z.string().optional(), // Título chamativo
+      subheadline: z.string().optional(), // Subtítulo para mais informações
+      ctaButtonText: z.string().optional(), // Texto do botão de chamada para ação (CTA)
+      ctaButtonLink: z.string().optional(), // Link do botão CTA
+      testimonials: z.array(z.object({ // Depoimentos de clientes
+        name: z.string(),
+        content: z.string(),
+        company: z.string().optional(),
+      })).optional(),
+      scarcity: z.string().optional(), // Elemento de escassez (ex: "Oferta válida até...")
+      urgency: z.string().optional(), // Elemento de urgência (ex: "Últimas vagas!")
+      guarantee: z.string().optional(), // Garantia oferecida (ex: "Satisfação garantida ou seu dinheiro de volta")
+      faq: z.array(z.object({ // Perguntas frequentes
+        question: z.string(),
+        answer: z.string(),
+      })).optional(),
+      results: z.string().optional(), // Prova científica ou resultados obtidos
+      postSaleSteps: z.string().optional(), // Próximos passos pós-venda
+      videoUrl: z.string().optional(), // URL de vídeo para o conteúdo
+      contentWritten: z.string().optional(), // Conteúdo escrito do artigo
     })
 })
 
