@@ -44,7 +44,7 @@ if (post.data.author) {
     <h2 class='text-4xl font-bold leading-tight text-white'>
       {post.data.title}
     </h2>
-    <h2 class='text-xl font-medium italic text-purple-200'>
+    <h2 class='text-xl font-medium italic text-sky-200'>
       {post.data.description}
     </h2>
     <span class='mt-3 flex'>
@@ -54,21 +54,21 @@ if (post.data.author) {
           alt={author.data.title}
           class='mr-2 h-10 w-10 rounded-full object-cover'
         />
-        <span class='font-semibold text-purple-200'>{author.data.title}</span>
+        <span class='font-semibold text-sky-200'>{author.data.title}</span>
       </span>
       {
         post.data.pubDate && (
           <span class='mr-6 flex items-center'>
-            <Icon class='mr-1 h-6 w-6 text-purple-200' name='heroicons:calendar-days' />
-            <span class='ml-1 font-semibold text-purple-200'>{post.data.pubDate.toString()}</span>
+            <Icon class='mr-1 h-6 w-6 text-sky-200' name='heroicons:calendar-days' />
+            <span class='ml-1 font-semibold text-sky-200'>{post.data.pubDate.toString()}</span>
           </span>
         )
       }
       {
         post.data.minutesRead && (
           <span class='flex items-center'>
-            <Icon class='mr-1 h-6 w-6 text-purple-200' name='heroicons:clock' />
-            <span class='ml-1 font-semibold text-purple-200'>{post.data.minutesRead}</span>
+            <Icon class='mr-1 h-6 w-6 text-sky-200' name='heroicons:clock' />
+            <span class='ml-1 font-semibold text-sky-200'>{post.data.minutesRead}</span>
           </span>
         )
       }
