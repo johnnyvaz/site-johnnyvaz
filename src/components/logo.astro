@@ -1,100 +1,99 @@
 ---
-const { size = '2rem' } = Astro.props; // Define uma prop de tamanho com valor padrão
+const { size = '2rem', translateFactor = 0.25 } = Astro.props; // Prop para ajustar o tamanho e fator de deslocamento
 ---
 <style>
-    .logo {
-      position: relative;
-      perspective: 1000px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+  .logo {
+    position: relative;
+    perspective: 1000px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .logo h1 {
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    display: flex;
+    position: relative;
+    margin: 0;
+  }
+  .logo h1 span {
+    display: inline-block;
+    background: linear-gradient(45deg, #4B0082, #8A2BE2, #C8A2C8, #808080, #000000);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: fadeLetters 10s infinite, gradientShift 15s infinite;
+  }
+  .logo h1 span.j {
+    animation: moveLetterJ 10s infinite, gradientShift 15s infinite;
+  }
+  .logo h1 span.v {
+    animation: moveLetterV 10s infinite, gradientShift 15s infinite;
+  }
+  .logo h1 span:not(.j):not(.v) {
+    animation: fadeLetters 10s infinite, gradientShift 15s infinite;
+  }
+  @keyframes fadeLetters {
+    0%, 25% {
+      opacity: 1;
     }
-    .logo h1 {
-      font-family: 'Arial', sans-serif;
-      color: #fff;
-      display: flex;
-      position: relative;
-      margin: 0;
+    35%, 65% {
+      opacity: 0;
     }
-    .logo h1 span {
-      display: inline-block;
-      background: linear-gradient(45deg, #4B0082, #8A2BE2, #C8A2C8, #808080, #000000);
-      background-size: 400% 400%;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: fadeLetters 10s infinite, gradientShift 15s infinite;
+    75%, 100% {
+      opacity: 1;
     }
-    .logo h1 span.j {
-      animation: moveLetterJ 10s infinite, gradientShift 15s infinite;
+  }
+  @keyframes moveLetterJ {
+    0%, 25% {
+      opacity: 1;
+      transform: translateX(0);
     }
-    .logo h1 span.v {
-      animation: moveLetterV 10s infinite, gradientShift 15s infinite;
+    35%, 65% {
+      opacity: 1;
+      transform: translateX(50px);
     }
-    .logo h1 span:not(.j):not(.v) {
-      animation: fadeLetters 10s infinite, gradientShift 15s infinite;
+    75%, 100% {
+      opacity: 1;
+      transform: translateX(0);
     }
-    @keyframes fadeLetters {
-      0%, 25% {
-        opacity: 1;
-      }
-      35%, 65% {
-        opacity: 0;
-      }
-      75%, 100% {
-        opacity: 1;
-      }
+  }
+  @keyframes moveLetterV {
+    0%, 25% {
+      opacity: 1;
+      transform: translateX(0);
     }
-    @keyframes moveLetterJ {
-      0%, 25% {
-        opacity: 1;
-        transform: translateX(0);
-      }
-      35%, 65% {
-        opacity: 1;
-        transform: translateX(50px);
-      }
-      75%, 100% {
-        opacity: 1;
-        transform: translateX(0);
-      }
+    35%, 65% {
+      opacity: 1;
+      transform: translateX(-45px);
     }
-    @keyframes moveLetterV {
-        0%, 25% {
-            opacity: 1;
-            transform: translateX(0);
-        }
-        35%, 65% {
-            opacity: 1;
-            transform: translateX(-50px);
-        }
-        75%, 100% {
-            opacity: 1;
-            transform: translateX(0);
-        }
+    75%, 100% {
+      opacity: 1;
+      transform: translateX(0);
     }
-    @keyframes gradientShift {
-      0% {
-        background-position: 0% 50%;
-      }
-      50% {
-        background-position: 100% 50%;
-      }
-      100% {
-        background-position: 0% 50%;
-      }
+  }
+  @keyframes gradientShift {
+    0% {
+      background-position: 0% 50%;
     }
-    @keyframes moveLines {
-      0% {
-        transform: translateX(0) translateY(0);
-      }
-      100% {
-        transform: translateX(-100px) translateY(-100px);
-      }
+    50% {
+      background-position: 100% 50%;
     }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  @keyframes moveLines {
+    0% {
+      transform: translateX(0) translateY(0);
+    }
+    100% {
+      transform: translateX(-100px) translateY(-100px);
+    }
+  }
 </style>
 
 <div class="logo">
-  <!-- Aplica o tamanho dinâmico definido pela prop "size" -->
   <h1 style={`font-size: ${size};`}>
     <span class="j">J</span>
     <span>o</span>

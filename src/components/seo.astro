@@ -7,7 +7,7 @@ import { getCollection } from 'astro:content'
 import type {
   Article,
   BreadcrumbList,
-  Organization,
+  // Organization,
   Person,
   WebSite,
   WithContext
@@ -55,7 +55,7 @@ const openGraph = {
 }
 const twitter = {
   card: (frontmatter.socialImage ? 'summary_large_image' : 'summary') as TwitterCardType,
-  site: SiteMetadata.org.twitter,
+  // site: SiteMetadata.org.twitter,
   creator: SiteMetadata.author.twitter
 }
 
@@ -70,9 +70,9 @@ const website: WithContext<WebSite> = {
   author: {
     '@id': SiteMetadata.author.url
   },
-  copyrightHolder: {
-    '@id': SiteMetadata.org.url
-  },
+  // copyrightHolder: {
+  //   '@id': SiteMetadata.org.url
+  // },
   copyrightYear: year,
   creator: {
     '@id': SiteMetadata.author.url
@@ -84,39 +84,39 @@ const website: WithContext<WebSite> = {
   },
   inLanguage: 'en',
   name: SiteMetadata.title,
-  publisher: {
-    '@id': SiteMetadata.org.url
-  },
+  // publisher: {
+  //   '@id': SiteMetadata.org.url
+  // },
   url: siteurl.toString()
 }
 
-const organization: WithContext<Organization> = {
-  '@context': 'https://schema.org',
-  '@id': SiteMetadata.org.url,
-  '@type': 'Organization',
-  address: SiteMetadata.location,
-  contactPoint: {
-    '@type': 'ContactPoint',
-    email: SiteMetadata.org.email
-  },
-  description: SiteMetadata.org.summary,
-  email: SiteMetadata.org.email,
-  founder: {
-    '@id': SiteMetadata.author.url
-  },
-  location: SiteMetadata.location,
-  image: {
-    '@type': 'ImageObject',
-    url: new URL(logo.src, siteurl).toString()
-  },
-  logo: {
-    '@type': 'ImageObject',
-    url: new URL(logo.src, siteurl).toString()
-  },
-  name: SiteMetadata.org.name,
-  sameAs: Object.values(social.map((social) => social.data.link)),
-  url: SiteMetadata.org.url
-}
+// const organization: WithContext<Organization> = {
+//   '@context': 'https://schema.org',
+//   '@id': SiteMetadata.org.url,
+//   '@type': 'Organization',
+//   address: SiteMetadata.location,
+//   contactPoint: {
+//     '@type': 'ContactPoint',
+//     email: SiteMetadata.org.email
+//   },
+//   description: SiteMetadata.org.summary,
+//   email: SiteMetadata.org.email,
+//   founder: {
+//     '@id': SiteMetadata.author.url
+//   },
+//   location: SiteMetadata.location,
+//   image: {
+//     '@type': 'ImageObject',
+//     url: new URL(logo.src, siteurl).toString()
+//   },
+//   logo: {
+//     '@type': 'ImageObject',
+//     url: new URL(logo.src, siteurl).toString()
+//   },
+//   name: SiteMetadata.org.name,
+//   sameAs: Object.values(social.map((social) => social.data.link)),
+//   url: SiteMetadata.org.url
+// }
 
 const breadcrumbList: WithContext<BreadcrumbList> = {
   '@context': 'https://schema.org',
@@ -150,9 +150,9 @@ const person: WithContext<Person> = {
   '@id': SiteMetadata.author.url,
   name: SiteMetadata.author.name,
   url: SiteMetadata.author.url,
-  worksFor: {
-    '@id': SiteMetadata.org.url
-  }
+  // worksFor: {
+  //   '@id': SiteMetadata.org.url
+  // }
 }
 
 const article: WithContext<Article> = {
@@ -162,9 +162,9 @@ const article: WithContext<Article> = {
   author: {
     '@id': SiteMetadata.author.url
   },
-  copyrightHolder: {
-    '@id': SiteMetadata.org.url
-  },
+  // copyrightHolder: {
+  //   '@id': SiteMetadata.org.url
+  // },
   copyrightYear: year,
   creativeWorkStatus: 'Published',
   creator: {
@@ -181,11 +181,11 @@ const article: WithContext<Article> = {
     url: new URL(image.src, siteurl).toString()
   },
   inLanguage: 'en',
-  mainEntityOfPage: SiteMetadata.org.url,
+  // mainEntityOfPage: SiteMetadata.org.url,
   name: frontmatter.title,
-  publisher: {
-    '@id': SiteMetadata.org.url
-  },
+  // publisher: {
+  //   '@id': SiteMetadata.org.url
+  // },
   url: siteurl.toString()
 }
 ---
@@ -197,7 +197,7 @@ const article: WithContext<Article> = {
   {twitter}
 />
 <script is:inline set:html={JSON.stringify(website)} type='application/ld+json' />
-<script is:inline set:html={JSON.stringify(organization)} type='application/ld+json' />
+<!-- <script is:inline set:html={JSON.stringify(organization)} type='application/ld+json' /> -->
 <script is:inline set:html={JSON.stringify(breadcrumbList)} type='application/ld+json' />
 <script is:inline set:html={JSON.stringify(person)} type='application/ld+json' />
 <script is:inline set:html={JSON.stringify(article)} type='application/ld+json' />
