@@ -49,25 +49,6 @@ const { frontmatter, schema = 'WebPage' } = Astro.props
       document.addEventListener('astro:after-swap', setDarkMode) // Runs on view transitions navigation
     </script>
 
-    <script>
-      window.chatwootSettings = {"position":"right","type":"expanded_bubble","launcherTitle":"Fale conosco no chat"};
-      (function(d,t) {
-        var BASE_URL="https://chatwoot.cd2.io";
-        var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-        g.src=BASE_URL+"/packs/js/sdk.js";
-        g.defer = true;
-        g.async = true;
-        s.parentNode.insertBefore(g,s);
-        g.onload=function(){
-          window.chatwootSDK.run({
-            websiteToken: 'AwLa3gJgiATkkr2q8PXJ5JT6',
-            baseUrl: BASE_URL
-          })
-        }
-      })(document,"script");
-    </script>
-
-
     <style is:inline>
       [x-cloak] {
         display: none !important;
@@ -109,4 +90,22 @@ const { frontmatter, schema = 'WebPage' } = Astro.props
       )
     }
   </body>
+  <script>
+    window.chatwootSettings = {"position":"right","type":"expanded_bubble","launcherTitle":"Fale conosco no chat"};
+    (function(d,t) {
+      var BASE_URL="https://chatwoot.cd2.io";
+      var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+      g.src=BASE_URL+"/packs/js/sdk.js";
+      g.defer = true;
+      g.async = true;
+      s.parentNode.insertBefore(g,s);
+      g.onload=function(){
+        window.chatwootSDK.run({
+          websiteToken: 'AwLa3gJgiATkkr2q8PXJ5JT6',
+          baseUrl: BASE_URL
+        })
+      }
+    })(document,"script");
+  </script>
+
 </html>

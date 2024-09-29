@@ -33,7 +33,8 @@ export const NavigationLinks = [
   { name: 'Home', href: '' },
   { name: 'Currículo', href: 'cv' },
   { name: 'Contato', href: 'contato' },
-  { name: 'Blog', href: 'blog' }
+  { name: 'Blog', href: 'blog' },
+  { name: 'Consultoria', href: 'consultoria'}
   // { name: 'Docs', href: 'doc/introduction' }
 ]
 

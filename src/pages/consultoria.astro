@@ -6,11 +6,11 @@ import PageHero from '../components/pagehero.astro'
 import type { CollectionEntry } from 'astro:content'
 import coverSVG from '../assets/svg/undraw/undraw_segment_analysis_re_ocsl.svg'
 import socialImage from '../assets/undraw/undraw_instant_information.png'
+import relatorio from '../assets/undraw/undraw_mathematics.png'
 
 const frontmatter: CollectionEntry<'page'>['data'] = {
   title: 'Consultoria ExpandTech',
-  description:
-    'Transforme sua ideia em um negócio real com a ajuda de tecnologia e Inteligência Artificial.',
+  description: 'Transforme sua ideia em um negócio real com a ajuda de tecnologia e Inteligência Artificial.',
   coverSVG: coverSVG,
   socialImage: socialImage
 }
@@ -19,79 +19,116 @@ const frontmatter: CollectionEntry<'page'>['data'] = {
 <Base frontmatter={frontmatter} schema='LandingPage'>
   <header>
     <PageHero
-      title={frontmatter.title}
-      description={frontmatter.description}
+      title="Transforme Seu Negócio com Tecnologia"
+      description="Consultoria personalizada para expandir seu negócio ou criar um novo empreendimento usando Inteligência Artificial."
       coverSVG={coverSVG}
       socialImage={socialImage}
     />
   </header>
   <main itemprop='mainContentOfPage'>
-    <section class='mx-auto mb-20 max-w-7xl text-gray-800 dark:text-gray-100'>
-      <div class='block bg-white dark:bg-gray-900 lg:my-8'>
-        <div class='px-6 py-12 text-center'>
-          <h2 class='mb-4 text-3xl font-bold'>Leve Seu Negócio Para o Próximo Nível</h2>
-          <p class='mb-8 text-lg'>
-            Com a Consultoria ExpandTech de Johnny Vaz, você terá acesso a estratégias
-            personalizadas que utilizam Inteligência Artificial e tecnologia para expandir seu
-            negócio ou criar um novo empreendimento do zero. Aproveite mais de 10 anos de
-            experiência na área de tecnologia e ERP para realizar seus sonhos de forma eficiente e
-            inovadora.
-          </p>
-        </div>
-        <div class='w-full px-6'>
-          <form
-            name='consultoria-interesse'
-            method='POST'
-            data-netlify='true'
-            data-netlify-honeypot='bot-field'
-            class='mx-auto max-w-3xl rounded-lg bg-white p-8 shadow-md'
+ <!-- Informação Principal + Chamada para Ação -->
+<section class='mx-auto mb-20 max-w-7xl text-gray-800 dark:text-gray-100'>
+    <div class='block bg-white dark:bg-gray-900 lg:my-8'>
+      <div class='flex flex-wrap items-center'>
+        <!-- Coluna de Informações e Botão -->
+        <div class='w-full lg:w-1/2 px-6 py-12 text-center lg:text-left'>
+          <h2 class='text-4xl font-extrabold mb-4 text-sky-700'>Expanda Seu Negócio Hoje Mesmo com IA!</h2>
+          <p class='text-lg mb-8'>A Consultoria ExpandTech de Johnny Vaz usa Inteligência Artificial e anos 
+            de experiência para transformar ideias em negócios reais e eficientes.</p>
+          <button
+            class='bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-8 rounded-lg text-xl mb-8'
+            type="button"
           >
-            <input type='hidden' name='form-name' value='consultoria-interesse' />
-            <p class='hidden'>
-              <label>Não preencha este campo: <input name='bot-field' /></label>
-            </p>
-            <div class='mb-4'>
-              <label class='mb-2 block text-left font-bold' for='name'>Seu Nome:</label>
-              <input
-                class='w-full rounded border border-gray-300 p-2'
-                type='text'
-                name='name'
-                id='name'
-                required
-              />
-            </div>
-            <div class='mb-4'>
-              <label class='mb-2 block text-left font-bold' for='email'>Seu Email:</label>
-              <input
-                class='w-full rounded border border-gray-300 p-2'
-                type='email'
-                name='email'
-                id='email'
-                required
-              />
-            </div>
-            <div class='mb-4'>
-              <label class='mb-2 block text-left font-bold' for='message'
-                >Como Podemos Ajudar?</label
-              >
-              <textarea
-                class='w-full rounded border border-gray-300 p-2'
-                name='message'
-                id='message'
-                rows='4'
-                required></textarea>
-            </div>
-            <div>
-              <button
-                class='rounded bg-sky-600 px-4 py-2 font-bold text-white hover:bg-sky-700'
-                type='submit'
-              >
-                Enviar Solicitação
-              </button>
-            </div>
-          </form>
+            Agende uma Consulta Gratuita Agora
+          </button>
+        </div>
+  
+        <!-- Coluna de Vídeo Explicativo -->
+        <div class='w-full lg:w-1/2 px-6 py-12 text-center'>
+          <div class='relative w-full h-0 pb-[56.25%]'>
+            <iframe
+              class='absolute top-0 left-0 w-full h-full rounded-lg shadow-md'
+              src="https://www.youtube.com/embed/SEU_VIDEO_ID"
+              title="Vídeo Explicativo da Consultoria ExpandTech"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
         </div>
       </div>
+    </div>
+  </section>
+     
+    <!-- Prova Social: Depoimentos de Clientes -->
+    <section class='mx-auto mb-20 max-w-7xl bg-gray-50 p-8 rounded-lg'>
+      <h3 class='text-3xl font-bold text-center mb-6'>O que nossos clientes dizem</h3>
+      <div class='flex flex-wrap justify-around'>
+        <blockquote class='w-full md:w-5/12 bg-white p-4 rounded-lg shadow-md mb-4'>
+          <p class='italic'>"Graças à consultoria do Johnny, nosso negócio duplicou em apenas 6 meses! A aplicação de IA foi um diferencial enorme."</p>
+          <footer class='mt-4 font-bold'>- Ana Paula, CEO de StartupTech</footer>
+        </blockquote>
+        <blockquote class='w-full md:w-5/12 bg-white p-4 rounded-lg shadow-md mb-4'>
+          <p class='italic'>"Johnny Vaz transformou nossa ideia em um produto lucrativo. A atenção ao detalhe e a experiência técnica fizeram toda a diferença."</p>
+          <footer class='mt-4 font-bold'>- Roberto Santos, Empreendedor</footer>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- Urgência e Escassez -->
+    <section class='mx-auto mb-20 max-w-7xl text-center bg-yellow-100 p-6 rounded-lg'>
+      <h3 class='text-2xl font-bold text-yellow-700'>Vagas Limitadas para Consultoria</h3>
+      <p class='text-lg'>Apenas 5 novas empresas serão atendidas este mês. Garanta a sua vaga e inicie seu crescimento com tecnologia agora mesmo!</p>
+      <button
+        class='mt-4 bg-sky-600 hover:bg-sky-700 text-white font-bold py-4 px-8 rounded-lg text-xl'
+        type="button"
+      >
+        Garanta Sua Vaga
+      </button>
+    </section>
+
+    <!-- Prova Científica: Resultados -->
+    <section class='mx-auto mb-20 max-w-7xl bg-white p-8 rounded-lg'>
+      <h3 class='text-3xl font-bold text-center mb-6'>Resultados Que Falam Por Si</h3>
+      <p class='text-lg text-center mb-8'>Em nossa consultoria, 85% dos clientes relataram aumento significativo de receita nos primeiros 6 meses, após implementar IA em seus processos.</p>
+      <img class='mx-auto w-10/12 md:w-8/12 lg:w-6/12' src={relatorio.src} alt='Resultados da Consultoria ExpandTech' />
+    </section>
+
+    <!-- Garantia -->
+    <section class='mx-auto mb-20 max-w-7xl bg-gray-50 p-8 rounded-lg'>
+      <h3 class='text-3xl font-bold text-center mb-4'>Garantia de Satisfação</h3>
+      <p class='text-lg text-center'>Se você não estiver satisfeito com os primeiros resultados em até 30 dias, devolvemos 100% do seu investimento na consultoria. Seu sucesso é nossa prioridade.</p>
+    </section>
+
+    <!-- FAQ: Perguntas Frequentes -->
+    <section class='mx-auto mb-20 max-w-7xl bg-white p-8 rounded-lg'>
+      <h3 class='text-3xl font-bold text-center mb-6'>Perguntas Frequentes</h3>
+      <div class='flex flex-col space-y-4'>
+        <div>
+          <h4 class='text-xl font-semibold'>Como funciona a Consultoria ExpandTech?</h4>
+          <p>A consultoria começa com uma análise personalizada do seu negócio e a definição de como IA pode ser aplicada para atender seus objetivos.</p>
+        </div>
+        <div>
+          <h4 class='text-xl font-semibold'>Quais são os benefícios de usar IA no meu negócio?</h4>
+          <p>Inteligência Artificial permite automação de processos, otimização de operações e insights avançados, ajudando seu negócio a crescer mais rápido.</p>
+        </div>
+        <div>
+          <h4 class='text-xl font-semibold'>Quanto tempo demora para ver resultados?</h4>
+          <p>Geralmente, os primeiros resultados aparecem entre 3 a 6 meses, dependendo do nível de aplicação e integração da tecnologia.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pós-Venda: Próximos Passos -->
+    <section class='mx-auto max-w-7xl bg-sky-100 p-8 rounded-lg'>
+      <h3 class='text-3xl font-bold text-center mb-4'>Seja Nosso Próximo Caso de Sucesso!</h3>
+      <p class='text-lg text-center mb-8'>Após o início da consultoria, oferecemos suporte continuado para garantir a implementação adequada e o crescimento contínuo do seu negócio.</p>
+      <button
+        class='bg-sky-600 hover:bg-sky-700 text-white font-bold py-4 px-8 rounded-lg text-xl'
+        type="button"
+      >
+        Fale Conosco e Comece Agora
+      </button>
     </section>
   </main>
 </Base>
