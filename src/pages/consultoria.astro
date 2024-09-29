@@ -1,0 +1,97 @@
+---
+import { getCollection } from 'astro:content'
+import { Icon } from 'astro-icon/components'
+import Base from '../layouts/base.astro'
+import PageHero from '../components/pagehero.astro'
+import type { CollectionEntry } from 'astro:content'
+import coverSVG from '../assets/svg/undraw/undraw_segment_analysis_re_ocsl.svg'
+import socialImage from '../assets/undraw/undraw_instant_information.png'
+
+const frontmatter: CollectionEntry<'page'>['data'] = {
+  title: 'Consultoria ExpandTech',
+  description:
+    'Transforme sua ideia em um negócio real com a ajuda de tecnologia e Inteligência Artificial.',
+  coverSVG: coverSVG,
+  socialImage: socialImage
+}
+---
+
+<Base frontmatter={frontmatter} schema='LandingPage'>
+  <header>
+    <PageHero
+      title={frontmatter.title}
+      description={frontmatter.description}
+      coverSVG={coverSVG}
+      socialImage={socialImage}
+    />
+  </header>
+  <main itemprop='mainContentOfPage'>
+    <section class='mx-auto mb-20 max-w-7xl text-gray-800 dark:text-gray-100'>
+      <div class='block bg-white dark:bg-gray-900 lg:my-8'>
+        <div class='px-6 py-12 text-center'>
+          <h2 class='mb-4 text-3xl font-bold'>Leve Seu Negócio Para o Próximo Nível</h2>
+          <p class='mb-8 text-lg'>
+            Com a Consultoria ExpandTech de Johnny Vaz, você terá acesso a estratégias
+            personalizadas que utilizam Inteligência Artificial e tecnologia para expandir seu
+            negócio ou criar um novo empreendimento do zero. Aproveite mais de 10 anos de
+            experiência na área de tecnologia e ERP para realizar seus sonhos de forma eficiente e
+            inovadora.
+          </p>
+        </div>
+        <div class='w-full px-6'>
+          <form
+            name='consultoria-interesse'
+            method='POST'
+            data-netlify='true'
+            data-netlify-honeypot='bot-field'
+            class='mx-auto max-w-3xl rounded-lg bg-white p-8 shadow-md'
+          >
+            <input type='hidden' name='form-name' value='consultoria-interesse' />
+            <p class='hidden'>
+              <label>Não preencha este campo: <input name='bot-field' /></label>
+            </p>
+            <div class='mb-4'>
+              <label class='mb-2 block text-left font-bold' for='name'>Seu Nome:</label>
+              <input
+                class='w-full rounded border border-gray-300 p-2'
+                type='text'
+                name='name'
+                id='name'
+                required
+              />
+            </div>
+            <div class='mb-4'>
+              <label class='mb-2 block text-left font-bold' for='email'>Seu Email:</label>
+              <input
+                class='w-full rounded border border-gray-300 p-2'
+                type='email'
+                name='email'
+                id='email'
+                required
+              />
+            </div>
+            <div class='mb-4'>
+              <label class='mb-2 block text-left font-bold' for='message'
+                >Como Podemos Ajudar?</label
+              >
+              <textarea
+                class='w-full rounded border border-gray-300 p-2'
+                name='message'
+                id='message'
+                rows='4'
+                required></textarea>
+            </div>
+            <div>
+              <button
+                class='rounded bg-sky-600 px-4 py-2 font-bold text-white hover:bg-sky-700'
+                type='submit'
+              >
+                Enviar Solicitação
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+</Base>
