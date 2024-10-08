@@ -1,9 +1,8 @@
 ---
-title: Currículo
-description: Descrição sobre alguns conhecimentos
-pubDate: 2024-09-21T00:00:00.000Z
+title: Currículo Vitae
+pubDate: 2024-09-30T00:54:36.474Z
 coverSVG: ../../assets/svg/undraw/undraw_creation_process_re_kqa9.svg
-socialImage: ../../assets/undraw/undraw_about_me.png
+description: Currículo com minha biografia, experiências e informações profissionais
 ---
 
 # Currículo
@@ -16,7 +15,7 @@ Mais de 6 anos de experiência como Analista e Desenvolvedor de Sistemas, trabal
 
 ## Experiência Profissional
 
-- **Engenheiro de Software** (2024 Atual - Rompi Soluções Inteligentes)  
+- **Engenheiro de Software** (2024 - Rompi Soluções Inteligentes)  
   Estruturação de fluxo de deploy automatizado, Programação em Sistemas Java/SpringBoot e Nodejs.
 
 - **Desenvolvedor de Sistemas** (Janeiro/2020 a Setembro/2023 - Magazine Luiza)  
