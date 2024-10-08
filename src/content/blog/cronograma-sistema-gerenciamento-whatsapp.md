@@ -2,7 +2,7 @@
 title: Cronograma Sistema Gerenciamento Whatsapp
 slug: cronograma-sistema-gerenciamento-whatsapp
 draft: false
-description: Copy to create a new post
+description: Descrição do serviço de implantação do sistema de gerenciamento de Chats
 author: johnny
 pubDate: 2000-01-01T00:00:00.000Z
 coverSVG: ../../assets/svg/undraw/undraw_building_websites.svg
