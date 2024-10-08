@@ -1,0 +1,91 @@
+---
+import Base from '../layouts/base.astro'
+import PageHero from '../components/pagehero.astro'
+import { SiteMetadata } from '../config'
+import socialImage from '../assets/undraw/undraw_contact_us.png'
+
+const frontmatter = {
+  title: 'Registro',
+  description: 'Cadastro de acesso na área restrita.',
+  socialImage: socialImage,
+  publishDate: SiteMetadata.buildTime
+}
+---
+
+<Base frontmatter={frontmatter}>
+  <header>
+    <PageHero
+      title={frontmatter.title}
+      description={frontmatter.description}
+      socialImage={socialImage}
+    />
+  </header>
+  <main>
+    <section class='mx-auto mb-20 max-w-7xl text-gray-800 dark:text-gray-100'>
+      <div class='block rounded-lg bg-white p-10 shadow-md lg:my-8 dark:bg-gray-800'>
+        <h1 class='mb-5 text-2xl font-bold'>Cadastrar na área restrita</h1>
+        <form action='/api/auth/register' method='post' class='space-y-6'>
+          <div>
+            <label for='name' class='block text-sm font-medium text-gray-700 dark:text-gray-200'>
+              Nome
+            </label>
+            <input
+              type='text'
+              name='name'
+              id='name'
+              class='mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 placeholder-gray-400 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500'
+              required
+            />
+          </div>
+          <div>
+            <label for='email' class='block text-sm font-medium text-gray-700 dark:text-gray-200'>
+              Email
+            </label>
+            <input
+              type='email'
+              name='email'
+              id='email'
+              class='mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 placeholder-gray-400 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500'
+              required
+            />
+          </div>
+          <div>
+            <label for='password' class='block text-sm font-medium text-gray-700 dark:text-gray-200'>
+              Senha
+            </label>
+            <input
+              type='password'
+              name='password'
+              id='password'
+              class='mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 placeholder-gray-400 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500'
+              required
+            />
+          </div>
+          <div>
+            <label for='phone' class='block text-sm font-medium text-gray-700 dark:text-gray-200'>
+              Celular
+            </label>
+            <input
+              type='tel'
+              name='phone'
+              id='phone'
+              placeholder="(XX) XXXXX-XXXX"
+              pattern="^\(?\d{2}\)?[\s-]?[\d]{5}-?[\d]{4}$"
+              class='mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 placeholder-gray-400 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500'
+              required
+            />
+            <small class="text-red-500 hidden" id="phoneError">Por favor, insira um número de telefone válido.</small>
+          </div>
+          <button
+            type='submit'
+            class='flex w-full justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:hover:bg-blue-600'
+          >
+            Cadastrar
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+
+</Base>

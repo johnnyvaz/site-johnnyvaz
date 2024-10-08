@@ -3,6 +3,7 @@ import type { Page, PaginateFunction } from 'astro'
 import type { CollectionEntry } from 'astro:content'
 import { PAGE_SIZE, getPosts } from '../../config'
 import Base from '../../layouts/base.astro'
+import { getCollection } from 'astro:content'
 import PageHero from '../../components/pagehero.astro'
 import BlogRoll from '../../components/blogroll.astro'
 import PaginateControl from '../../components/paginatecontrol.astro'
@@ -30,6 +31,8 @@ export async function getStaticPaths({ paginate }: { paginate: PaginateFunction 
 
   return paginate(posts, { pageSize: PAGE_SIZE })
 }
+
+export const prerender = true; 
 ---
 
 <Base frontmatter={frontmatter}>

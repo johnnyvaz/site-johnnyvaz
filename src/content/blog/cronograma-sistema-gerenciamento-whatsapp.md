@@ -4,15 +4,19 @@ slug: cronograma-sistema-gerenciamento-whatsapp
 draft: false
 description: Descrição do serviço de implantação do sistema de gerenciamento de Chats
 author: johnny
-pubDate: 2000-01-01T00:00:00.000Z
+pubDate: 2024-10-08T00:38:31.325Z
 coverSVG: ../../assets/svg/undraw/undraw_building_websites.svg
 socialImage: ../../assets/undraw/undraw_building_websites.png
 categories:
-  - negócio
+    - negócio
 tags:
-  - template
-  - hello
+    - whatsapp
+    - serviços
 ---
+
+# Transforme a Comunicação com seus Clientes com um Sistema de Chat Inteligente e Integrado
+
+## Atenda seus clientes em diversos canais com automação, inteligência artificial e integrações personalizadas para impulsionar seu atendimento.
 
 **Cronograma e Custos para Implementação do Sistema de Gerenciamento de WhatsApp
 
@@ -63,7 +67,7 @@ tags:
 
 ### 4. **Custo de Mão de Obra para Implementação Inicial**
 
-- **Valor Hora Técnico**: R$ (Definir valor por hora)  
+- **Valor Hora Técnico**: R$ Definir valor por hora  
   Supondo que a mão de obra seja cobrada a **R$ 100,00/hora**, temos:
 
 | **Atividade**                                    | **Horas** | **Custo Estimado** |

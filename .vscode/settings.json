@@ -15,5 +15,7 @@
   },
   "files.associations": {
     "*.mdoc": "markdown"
+  },
+  "[markdown]": {
   }
 }

@@ -12,6 +12,8 @@ export interface Props {
 }
 
 const { post, prev, next } = Astro.props
+
+export const prerender = true; 
 ---
 
 <Base frontmatter={post.data}>

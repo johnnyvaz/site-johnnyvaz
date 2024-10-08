@@ -20,11 +20,79 @@ const frontmatter: CollectionEntry<'page'>['data'] = {
 const posts = await getPosts()
 ---
 
+<style>
+  /* Animação de slide-in para o Hero */
+  @keyframes slide-in {
+    from {
+      transform: translateY(50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  /* Aplicar ao Hero */
+  .hero {
+    animation: slide-in 1s ease-out forwards;
+    opacity: 0; /* Começa invisível */
+  }
+
+  /* Fade-in suave para Features */
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .features {
+    animation: fade-in 1.5s ease-in forwards;
+    opacity: 0;
+  }
+
+  /* Zoom para FindOutMore */
+  .findoutmore {
+    transition: transform 0.5s ease;
+  }
+
+  .findoutmore:hover {
+    transform: scale(1.05);
+  }
+
+  /* Fade-in para o CTA */
+  .cta {
+    animation: fade-in 2s ease-in-out forwards;
+    opacity: 0;
+  }
+</style>
+
 <Base frontmatter={frontmatter}>
-  <Hero />
-  <Features />
-  <FindOutMore />
+  <!-- Animação aplicada ao Hero -->
+  <div class="hero">
+    <Hero />
+  </div>
+
+  <!-- Animação aplicada ao Features -->
+  <div class="features">
+    <Features />
+  </div>
+
+  <!-- Zoom-in aplicado ao FindOutMore -->
+  <div class="findoutmore">
+    <FindOutMore />
+  </div>
+
+  <!-- Fade-in aplicado ao LatestArticles -->
   <LatestArticles {posts} />
-  <CTA />
+
+  <!-- Fade-in para o CTA -->
+  <div class="cta">
+    <CTA />
+  </div>
+
   <div class='bg-white p-24 dark:bg-black md:p-12'></div>
 </Base>

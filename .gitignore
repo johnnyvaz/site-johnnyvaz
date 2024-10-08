@@ -21,3 +21,5 @@ pnpm-debug.log*
 
 .astro
 dados emails:.md
+OAuth applications.md
+.netlify

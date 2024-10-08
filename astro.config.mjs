@@ -11,7 +11,7 @@ import remarkPlantUML from '@akebifiky/remark-simple-plantuml';
 import { remarkReadingTime } from './remark-plugins/remark-reading-time.mjs';
 import { remarkDiagram } from './remark-plugins/remark-diagram.mjs';
 import icon from "astro-icon";
-
+import netlify from '@astrojs/netlify';
 import markdoc from "@astrojs/markdoc";
 
 // https://astro.build/config
@@ -37,4 +37,6 @@ export default defineConfig({
     },
   },
   scopedStyleStrategy: "where",
+  output: 'server',
+  adapter: netlify(),
 });
